@@ -3,7 +3,7 @@
      * Returns a mysqli object or prints a full HTML error page and execution
      */
     function get_db_connection_or_die(){
-        $mysqli = new mysqli('127.0.0.1', 'root', '1234', 'dbDromeda');
+        $mysqli = new mysqli('127.0.0.1', 'root', '', 'dromedadb');
         if ($mysqli -> connect_error){
             echo "<!DOCTYPE html>";
             echo "<html>";

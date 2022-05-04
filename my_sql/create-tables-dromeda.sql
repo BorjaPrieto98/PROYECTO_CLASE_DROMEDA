@@ -6,6 +6,7 @@ CREATE TABLE tUser(
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(50) NOT NULL,
     nombre_usuario VARCHAR(50) NOT NULL,
+    password VARCHAR(100) NOT NULL,
     encrypted_password VARCHAR(100) NOT NULL,
     coins INTEGER,
     active_session_token CHAR(20)
