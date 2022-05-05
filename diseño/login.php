@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilos/estilo_login.css" type="text/css">
+    <link rel="stylesheet" href="estilos/estilo_registro.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Document</title>
 </head>
@@ -19,7 +19,7 @@
                 <a href="coleccion.html" id="texto_menu">COLECCIÓN</a>
             </div>
             <div class="col text-center">
-                <button type="button" class="btn" id="iniciar"><b><a href="registro.html" id="inicio">Registro</a></b></button>
+                <button type="button" class="btn" id="iniciar"><b><a href="registro.php" id="inicio">Registro</a></b></button>
             </div>
         </div>
         <div class="container" id="contenedor_registro">
@@ -28,12 +28,13 @@
                     <p id="texto_registro">LOGIN</p>
                 </div>
             </div>
+
             <div class="row" id="fila_formulario">
                 <div class="col">
-                    <form>
-                        <input class="form-control" type="text" placeholder="Nombre de usuario" id="nombre_usuario">
-                        <input class="form-control" type="text" placeholder="Contraseña" id="contrasenha">
-                        <button type="button" class="btn" id="enviar"><b>Enviar</b></button>
+                    <form action="do_login.php" method="POST" id="register">
+                        <input class="form-control" type="text" placeholder="Email" name="email" id="email" required>
+                        <input class="form-control" type="password" placeholder="Contraseña" name="contrasenha" id="contrasenha" required>
+                        <button type="submit" class="btn" id="enviar"><b>Enviar</b></button>
                     </form>
                 </div>
             </div>
@@ -57,5 +58,6 @@
             </div>
         </div>
     </div>
+    <script src="js/comprobacion_registro.js"></script>
 </body>
 </html>

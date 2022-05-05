@@ -12,7 +12,7 @@ $coins = 100;
 try {
   $sql = "INSERT INTO tuser (email, nombre_usuario, encrypted_password, coins) VALUES (?, ?, ?, ?)";
   $stmt = $mysqli->prepare($sql);
-  $stmt->bind_param("sssi", $name, $email, password_hash($pass, PASSWORD_BCRYPT), $coins);
+  $stmt->bind_param("sssi", $email, $name, password_hash($pass, PASSWORD_BCRYPT), $coins);
   $stmt->execute();
   if (!empty($mysqli->error)) {
     header("Location: registro.php?register_failed_email=True");
