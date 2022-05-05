@@ -17,7 +17,7 @@ if (mysqli_num_rows($result) > 0) {
     if (password_verify($fpass, $only_row[1])) {
         session_start();
         $_SESSION['user_id'] = $only_row[0];
-        header('Location: pagina_principal.html');
+        header('Location: coleccion.php');
     } else {
         header('Location: login.php?login_failed_password=True');
         echo $only_row[1];

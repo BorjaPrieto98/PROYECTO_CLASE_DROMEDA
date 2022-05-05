@@ -33,48 +33,34 @@
             <div class="col text-center">
                 <h1>TU COLECCIÓN</h1>
             </div>
-            <?php
-                #Comprobamos que la sesión no está vacía
-                if (empty($user_id)) {
-                    header('Location: error.php?mensaje=Error');
-                } else {
-                    #Instanciamos una variable donde cogemos todos los datos del usuario que tenga como id el comprobado anteriormente
-                    // $carta = "SELECT id_carta FROM tuser_carta WHERE id_user=3";
-                    // $result = mysqli_query($mysqli, $carta) or die('Query Error');
-                    // #Almacenamos en la variable result la query
-                    // $row1 = mysqli_fetch_array($result);
-                    #Comprobamos que la casilla de la columna business_name es nula para ese usuario
-                    echo '<br>';
-                    echo '<br>';
-                    echo '<br>';
-                    echo '<br>';
-                    #Creamos una variable que nos almacene toda la información de los eventos de ese usuario
-                    $sql = 'SELECT * FROM tcartas WHERE id=1';
-                    $result1 = mysqli_query($mysqli, $sql) or die('Query Error');
-                    echo '<table class="default">';
-                    echo '<tr>';
-                    echo '<th>NOMBRE</th>';
-                    echo '<th>RAREZA</th>';
-                    echo '<th>IMAGEN</th>';
-                    echo '</tr>';
-                    #Recorremos $result1, almacenando los datos en un array
-                    while ($row = mysqli_fetch_array($result1)) {
-                        echo '<tr>';
-                        #Mostramos los datos que queremos
-                        echo '<td>' . $row['nombre'] . '</td>';
-                        echo '<td>' . $row['rareza'] . '</td>';
-                        echo '<td>' . $row['imagen'] . '</td>';
-                        echo '</tr>';
-                    }
-
-                    echo '</table>';
-                    #Cerramos la conexión
-                    mysqli_close($mysqli);
-                }
-
-		?>
-
         </div>
+        <div class="container">
+            <?php
+                    #Comprobamos que la sesión no está vacía
+                    if (empty($user_id)) {
+                        header('Location: error.php?mensaje=Error');
+                    } else {
+                        echo '<br>';
+                        echo '<br>';
+                        echo '<br>';
+                        echo '<br>';
+                        #Creamos una variable que nos almacene toda la información de los eventos de ese usuario
+                        $sql = 'SELECT tcartas.nombre, tcartas.rareza, tcartas.imagen FROM tcartas INNER JOIN tuser_carta ON tcartas.id = tuser_carta.id_carta INNER JOIN tuser ON tuser_carta.id_user = '.$user_id;
+                        $result1 = mysqli_query($mysqli, $sql) or die('Query Error');
+                        #Recorremos $result1, almacenando los datos en un array
+                        while ($row = mysqli_fetch_array($result1)) {
+                            #Mostramos los datos que queremos
+                            echo '<div class="hola" style="text-align:center">
+                                    <img src="' . $row['imagen'] . '" alt="imagen"/>
+                                    <p style="font-size: 20px; color: white">'.$row['rareza'].'</p>
+                                </div>';
+                        }
+                        #Cerramos la conexión
+                        mysqli_close($mysqli);
+                    }
+                ?>
+        </div>
+        
     </div>
 </body>
 </html>
