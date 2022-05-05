@@ -50,7 +50,7 @@
                         #Recorremos $result1, almacenando los datos en un array
                         while ($row = mysqli_fetch_array($result1)) {
                             #Mostramos los datos que queremos
-                            echo '<div class="hola" style="text-align:center">
+                            echo '<div class="columnas" style="text-align:center">
                                     <img src="' . $row['imagen'] . '" alt="imagen"/>
                                     <p style="font-size: 20px; color: white">'.$row['rareza'].'</p>
                                 </div>';
