@@ -41,14 +41,14 @@
                     if (empty($user_id)) {
                         header('Location: error.php?mensaje=Error');
                     } else {
-                        $alt = rand(1, 5);
+                        $alt=rand(1, 5);
                         echo '<br>';
                         echo '<br>';
                         echo '<br>';
                         echo '<br>';
                         echo '<table>';
                             #Creamos una variable que nos almacene toda la información de los eventos de ese usuario
-                            $sql = 'SELECT imagen, precio FROM tcartas WHERE id='.$alt;
+                            $sql = 'SELECT id, imagen, precio FROM tcartas WHERE id='.$alt;
                             $result1 = mysqli_query($mysqli, $sql) or die('Query Error');
                             #Recorremos $result1, almacenando los datos en un array
                             while ($row = mysqli_fetch_array($result1)) {
@@ -60,7 +60,7 @@
                                 echo '<tr>';
                                 echo '<td><img src="' . $row['imagen'] . '" alt="imagen"/></td>';
                                 echo '<td><p style="font-size: 20px; color: white">'.$row['precio'].' coins</p>
-                                    <a href="compra.php">COMPRAR</a>
+                                    <a href="compra.php?id='.$row['id'].'">COMPRAR</a>
                                 </td>';                
                             }
                         echo '</table>';
