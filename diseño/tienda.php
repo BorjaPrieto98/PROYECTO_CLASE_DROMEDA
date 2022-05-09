@@ -32,7 +32,7 @@
         </div>
         <div class="row align-items-center" id="fila_imagenes">
             <div class="col text-center">
-                <h1>TU COLECCIÓN</h1>
+                <h1>TIENDA</h1>
             </div>
         </div>
         <div class="container">
@@ -41,22 +41,27 @@
                     if (empty($user_id)) {
                         header('Location: error.php?mensaje=Error');
                     } else {
+                        $alt = rand(1, 5);
                         echo '<br>';
                         echo '<br>';
                         echo '<br>';
                         echo '<br>';
                         echo '<table>';
                             #Creamos una variable que nos almacene toda la información de los eventos de ese usuario
-                            $sql = 'SELECT tcartas.nombre, tcartas.rareza, tcartas.imagen, tcartas.precio FROM tcartas INNER JOIN tuser_carta ON tcartas.id = tuser_carta.id_carta INNER JOIN tuser ON tuser_carta.id_user = '.$user_id;
+                            $sql = 'SELECT imagen, precio FROM tcartas WHERE id='.$alt;
                             $result1 = mysqli_query($mysqli, $sql) or die('Query Error');
                             #Recorremos $result1, almacenando los datos en un array
                             while ($row = mysqli_fetch_array($result1)) {
                                 #Mostramos los datos que queremos
-                                echo '<div class="columnas" style="text-align:center">
-                                        <img src="' . $row['imagen'] . '" alt="imagen"/>
-                                        <p style="font-size: 20px; color: white">'.$row['rareza'].'</p>
-                                        <p style="font-size: 20px; color: white">'.$row['precio'].' coins</p>
-                                    </div>';                               
+                                // echo '<div class="columnas" style="text-align:center">
+                                //         <img src="' . $row['imagen'] . '" alt="imagen"/>
+                                //         <p style="font-size: 20px; color: white">'.$row['precio'].' coins</p>
+                                //     </div>';               
+                                echo '<tr>';
+                                echo '<td><img src="' . $row['imagen'] . '" alt="imagen"/></td>';
+                                echo '<td><p style="font-size: 20px; color: white">'.$row['precio'].' coins</p>
+                                    <a href="compra.php">COMPRAR</a>
+                                </td>';                
                             }
                         echo '</table>';
                         #Cerramos la conexión
