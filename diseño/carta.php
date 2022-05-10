@@ -77,6 +77,7 @@
                                         </div>
                                     </div>';                               
                             }
+
                         #Cerramos la conexión
                         mysqli_close($mysqli);
                     }

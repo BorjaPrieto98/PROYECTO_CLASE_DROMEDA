@@ -23,7 +23,8 @@
                 <a href="mercado.php" id="texto_menu">MERCADO</a>
             </div>
             <div class="col text-center">
-                <button type="button" class="btn" id="iniciar"><b><a href="registro.php" id="inicio">Registro</a></b></button>
+                <button type="button" class="btn" id="iniciar"><a href="registro.php" id="inicio">Registro</a></button>
+                
             </div>
         </div>
         <div class="container" id="contenedor_registro">
