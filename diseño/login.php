@@ -10,6 +10,7 @@
     <title>Document</title>
 </head>
 <body>
+
     <div class="container-fluid" id="contenedor_principal">
         <div class="row" id="fila_menu">
             <div class="col text-center" id="col_tienda">

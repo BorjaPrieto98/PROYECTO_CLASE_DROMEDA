@@ -4,9 +4,6 @@
     session_start();
     $mysqli = get_db_connection_or_die();
     $user_id = $_SESSION['user_id'];
-    if(empty($user_id)){
-        header('Location: error.php');
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,6 +47,7 @@
             </div>
         </div>
         <div class="container">
+            <p id="saldo">No tienes saldo para comprar esa carta</p>
             <?php
                     #Comprobamos que la sesión no está vacía
                     if (empty($user_id)) {

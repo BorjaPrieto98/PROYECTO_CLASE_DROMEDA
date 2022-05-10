@@ -26,6 +26,16 @@
             <div class="col text-start" id="col_tienda">
                 <a href="coleccion.php" id="texto_menu">COLECCIÓN</a>
             </div>
+            <div class="col text-center">   
+                <?php
+                    $coin = 'SELECT coins, nombre_usuario FROM tuser WHERE id='.$user_id;
+                    $rsl = mysqli_query($mysqli, $coin) or die('Query Error');
+                    while ($row = mysqli_fetch_array($rsl)) {
+                        echo '<p id="nombre">'.$row['nombre_usuario'].'</p>';
+                        echo '<p id="coin">'.$row['coins'].' <img src="img/moneda.png" alt="img" width=20px/></p>';
+                    }
+                ?>
+            </div>
             <div class="col text-center">
                 <!-- <button type="submit" class="btn" id="iniciar"><b><a href="#" id="inicio">Logout</a></b></button> -->
                 <button onclick="window.location.href='/logout.php'" class="btn" id="iniciar" style="color: white">Logout</button>
@@ -48,20 +58,24 @@
                         echo '<br>';
                         echo '<br>';
                         echo '<br>';
-                        echo '<table>';
                             #Creamos una variable que nos almacene toda la información de las cartas de ese usuario
                             $sql = 'SELECT nombre, imagen, rareza, precio, id FROM tcartas WHERE id='.$id;
                             $result1 = mysqli_query($mysqli, $sql) or die('Query Error');
                             #Recorremos $result1, almacenando los datos en un array
                             while ($row = mysqli_fetch_array($result1)) {
                                 #Mostramos los datos que queremos
-                                echo '<tr>
-                                        <td><img src="' . $row['imagen'] . '" alt="imagen"/>
-                                        <td><p style="font-size: 20px; color: white">'.$row['rareza'].'</p>
-                                        <p style="font-size: 20px; color: white">'.$row['precio'].' coins</p></td>
-                                        <td><a href="vender.php?id='.$id.'">Vender</a></td>
-
-                                    </tr>';                               
+                                echo '<div class="row">
+                                        <div class="col">
+                                            <img src="' . $row['imagen'] . '" alt="imagen" width=90% style="margin-bottom: 100px"/>
+                                        </div>
+                                        <div class="col">
+                                            <p id="rareza">TIPO: '.$row['rareza'].'</p>
+                                            <br>
+                                            <p id="rareza_precio">PRECIO: '.$row['precio'].' <img src="img/moneda.png" alt="img" width=20px/></p>
+                                            <br>
+                                            <a href="vender.php?id='.$id.'" id="enlace_vender">VENDER</a>
+                                        </div>
+                                    </div>';                               
                             }
                         echo '</table>';
                         #Cerramos la conexión
@@ -69,6 +83,24 @@
                     }
                 ?>
         </div>
+        <footer>
+            <div class="row">
+                <div class="col">
+                    <h3>DROMEDA</h3>
+                    <p>2022</p>
+                </div>
+                <div class="col">
+                    <h4>Borja Prieto López</h4>
+                    <p>648 68 38 80</p>
+                </div>
+                <div class="col">
+                    <h4>MENÚ</h4>
+                    <a href="coleccion.php">Colección</a>
+                    <br>
+                    <a href="tienda.php">Tienda</a>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
