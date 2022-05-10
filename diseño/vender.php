@@ -20,8 +20,14 @@ try {
     }
     $coins_up=$coin + $coins_user;
     $coins_update = "UPDATE tuser SET coins=".$coins_up." WHERE id=".$user_id;
+    $usuario_carta = "SELECT id FROM tuser_carta WHERE id_user=".$user_id." AND id_carta=".$id;
+    $result5= mysqli_query($mysqli, $usuario_carta) or die('Query Error');
+    while ($row = mysqli_fetch_array($result5)) {
+        #Mostramos los datos que queremos
+        $user_card=$row['id'];                         
+    }
     $result3 = mysqli_query($mysqli, $coins_update) or die('Query Error');
-    $sql = "DELETE FROM tuser_carta WHERE id_carta=".$id." AND id_user =".$user_id;
+    $sql = "DELETE FROM tuser_carta WHERE id=".$user_card;
     $result4 = mysqli_query($mysqli, $sql) or die('Query Error');
 } catch (Exception $e) {
     error_log($e);

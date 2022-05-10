@@ -25,10 +25,10 @@
             <div class="col text-center" id="col_tienda">
                 <a href="tienda.php" id="texto_menu">TIENDA</a>
             </div>
-            <div class="col text-start" id="col_tienda">
+            <div class="col text-center" id="col_tienda">
                 <a href="coleccion.php" id="texto_menu">COLECCIÓN</a>
             </div>
-            <div class="col text-start" id="col_tienda">
+            <div class="col text-center" id="col_tienda">
                 <a href="mercado.php" id="texto_menu">MERCADO</a>
             </div>
             <div class="col text-center">   

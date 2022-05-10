@@ -13,10 +13,13 @@
     <div class="container-fluid" id="contenedor_principal">
         <div class="row" id="fila_menu">
             <div class="col text-center" id="col_tienda">
-                <a href="#" id="texto_menu">TIENDA</a>
+                <a href="tienda.php" id="texto_menu">TIENDA</a>
             </div>
-            <div class="col text-start" id="col_tienda">
-                <a href="coleccion.html" id="texto_menu">COLECCIÓN</a>
+            <div class="col text-center" id="col_tienda">
+                <a href="coleccion.php" id="texto_menu">COLECCIÓN</a>
+            </div>
+            <div class="col text-center" id="col_tienda">
+                <a href="mercado.php" id="texto_menu">MERCADO</a>
             </div>
             <div class="col text-center">
                 <button type="button" class="btn" id="iniciar"><b><a href="login.php" id="inicio">Login</a></b></button>
@@ -70,9 +73,11 @@
                 <h4>MENÚ</h4>
                 <a href="pagina_principal.html">Inicio</a>
                 <br>
-                <a href="coleccion.html">Colección</a>
+                <a href="coleccion.php">Colección</a>
                 <br>
-                <a href="tienda.html">Tienda</a>
+                <a href="tienda.php">Tienda</a>
+                <br>
+                <a href="mercado.php">Mercado</a>
             </div>
         </div>
     </div>
