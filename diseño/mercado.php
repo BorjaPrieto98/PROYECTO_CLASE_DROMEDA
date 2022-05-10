@@ -48,43 +48,72 @@
         </div>
         <div class="row align-items-center" id="fila_imagenes">
             <div class="col text-center">
-                <h1>TU COLECCIÓN</h1>
+                <h1>MERCADO</h1>
             </div>
         </div>
         <div class="container">
-            <?php
-                    #Comprobamos que la sesión no está vacía
-                    if (empty($user_id)) {
-                        header('Location: error.php?mensaje=Error');
-                    } else {
-                        echo '<br>';
-                        echo '<br>';
-                        echo '<br>';
-                        echo '<br>';
-                            #Creamos una variable que nos almacene toda la información de las cartas de ese usuario
-                            $sql = 'SELECT tcartas.nombre, tcartas.rareza, tcartas.imagen, tcartas.precio, tcartas.id FROM tcartas INNER JOIN tuser_carta ON tcartas.id = tuser_carta.id_carta INNER JOIN tuser ON tuser_carta.id_user = '.$user_id;
-                            $result1 = mysqli_query($mysqli, $sql) or die('Query Error');
-                            #Recorremos $result1, almacenando los datos en un array
-                            while ($row = mysqli_fetch_array($result1)) {
-                                #Mostramos los datos que queremos
-                                echo '<div class="row">
-                                    <div class="col" style="text-align:center">
-                                        <a href="carta.php?id='.$row['id'].'"><img src="' . $row['imagen'] . '" alt="imagen" id="carta"/></a>
-                                    </div> 
-                                    <div class="col">
-                                        <p id="rareza">TIPO: '.$row['rareza'].'</p>
-                                        <br>
-                                        <p id="rareza_precio">PRECIO: '.$row['precio'].' <img src="img/moneda.png" alt="img" width=20px/></p>
-                                        <br>
-                                        <a href="vender.php?id='.$row['id'].'" id="enlace_vender">VENDER</a>
-                                    </div>
-                                </div>';
-                                                            
-                            }
-                        #Cerramos la conexión
-                        mysqli_close($mysqli);
-                    }
-                ?>
+            <div class="row">
+                    <div class="col">
+                        <img src="img/sobre.png" alt="img" width="55%" id="sobre"/>
+                    </div>
+                    <div class="col">
+                        <p id="rareza">SOBRE NORMAL</p>
+                        <p id="rareza_precio"> 1000 <img src="img/moneda.png" alt="img" width=20px/></p>
+                        <br>
+                        <i style="color: white">Al comprar este sobre optendrás una carta de rareza NORMAL</i>
+                    </div>
+            </div>
+            <div class="row">
+                <a href="sobre_normal.php" id="enlace_compra">COMPRAR</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                    <div class="col">
+                        <img src="img/sobre.png" alt="img" width="55%" id="sobre"/>
+                    </div>
+                    <div class="col">
+                        <p id="rareza">SOBRE ESPECIAL</p>
+                        <p id="rareza_precio"> 1500 <img src="img/moneda.png" alt="img" width=20px/></p>
+                        <br>
+                        <i style="color: white">Al comprar este sobre optendrás una carta de rareza ESPECIAL o NORMAL</i>
+                    </div>
+            </div>
+            <div class="row">
+                <a href="sobre_especial.php" id="enlace_compra">COMPRAR</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                    <div class="col">
+                        <img src="img/sobre.png" alt="img" width="55%" id="sobre"/>
+                    </div>
+                    <div class="col">
+                        <p id="rareza">SOBRE ULTRA</p>
+                        <p id="rareza_precio"> 5000 <img src="img/moneda.png" alt="img" width=20px/></p>
+                        <br>
+                        <i style="color: white">Al comprar este sobre optendrás una carta de rareza ESPECIAL o DIOS</i>
+                    </div>
+            </div>
+            <div class="row">
+                <a href="sobre_ultra.php" id="enlace_compra">COMPRAR</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                    <div class="col">
+                        <img src="img/sobre.png" alt="img" width="55%" id="sobre"/>
+                    </div>
+                    <div class="col">
+                        <p id="rareza">SOBRE DIVINO</p>
+                        <p id="rareza_precio"> 15000 <img src="img/moneda.png" alt="img" width=20px/></p>
+                        <br>
+                        <i style="color: white">Al comprar este sobre optendrás una carta de rareza DIOS</i>
+                    </div>
+            </div>
+            <div class="row">
+                <a href="sobre_divino.php" id="enlace_compra">COMPRAR</a>
+            </div>
         </div>
         <footer>
             <div class="row">
@@ -101,6 +130,8 @@
                     <a href="coleccion.php">Colección</a>
                     <br>
                     <a href="tienda.php">Tienda</a>
+                    <br>
+                    <a href="mercado.php">Mercado</a>
                 </div>
             </div>
         </footer>

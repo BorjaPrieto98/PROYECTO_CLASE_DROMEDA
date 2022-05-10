@@ -36,7 +36,7 @@ try {
         exit();
       }
       $stmt->close();
-      header('Location: tienda_sin_saldo.php');
+      header('Location: coleccion.php');
     }
     
 } catch (Exception $e) {

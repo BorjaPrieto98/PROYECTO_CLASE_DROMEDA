@@ -4,6 +4,8 @@
     session_start();
     $mysqli = get_db_connection_or_die();
     $user_id = $_SESSION['user_id'];
+    $id = $_GET['id'];
+    $id2 = $_GET['id2'];
     if(empty($user_id)){
         header('Location: error.php');
     }
@@ -45,51 +47,60 @@
                 <!-- <button type="submit" class="btn" id="iniciar"><b><a href="#" id="inicio">Logout</a></b></button> -->
                 <button onclick="window.location.href='/logout.php'" class="btn" id="iniciar" style="color: white">Logout</button>
             </div>
-            
         </div>
         <div class="row align-items-center" id="fila_imagenes">
             <div class="col text-center">
-                <h1>TIENDA</h1>
+                <h1>MERCADO</h1>
             </div>
         </div>
         <div class="container">
-            <?php
-                    #Comprobamos que la sesión no está vacía
-                    if (empty($user_id)) {
-                        header('Location: error.php?mensaje=Error');
-                    } else {
-                        $alt=rand(1, 5);
-                        echo '<br>';
-                        echo '<br>';
-                        echo '<br>';
-                        echo '<br>';
-                            #Creamos una variable que nos almacene toda la información de los eventos de ese usuario
-                            $sql = 'SELECT id, imagen, precio FROM tcartas WHERE id='.$alt;
-                            $result1 = mysqli_query($mysqli, $sql) or die('Query Error');
-                            #Recorremos $result1, almacenando los datos en un array
-                            while ($row = mysqli_fetch_array($result1)) {
-                                #Mostramos los datos que queremos
-                                // echo '<div class="columnas" style="text-align:center">
-                                //         <img src="' . $row['imagen'] . '" alt="imagen"/>
-                                //         <p style="font-size: 20px; color: white">'.$row['precio'].' coins</p>
-                                //     </div>';               
-                                echo '<div class="row">
-                                    <div class="col" style="text-align:center">
-                                        <img src="' . $row['imagen'] . '" alt="imagen" style="margin-bottom: 100px"/>
-                                    </div>
-                                    <div class="col">
-                                        <p id="rareza">PRECIO: '.$row['precio'].' <img src="img/moneda.png" alt="img" width=20px/></p>
-                                        <br>
-                                        <a href="compra.php?id='.$row['id'].'" id="enlace_compra">COMPRAR</a>
-                                    </div>';           
-                            }
-                        #Cerramos la conexión
-                        mysqli_close($mysqli);
+            <div class="row">
+                <?php
+                    $sql = 'SELECT nombre, imagen, rareza, precio, id FROM tcartas WHERE id='.$id;
+                    $result1 = mysqli_query($mysqli, $sql) or die('Query Error');
+                    #Recorremos $result1, almacenando los datos en un array
+                    while ($row = mysqli_fetch_array($result1)) {
+                        #Mostramos los datos que queremos
+                        echo '<div class="col">
+                                    <img src="' . $row['imagen'] . '" alt="imagen" width=90% style="margin-bottom: 100px; margin-top: 100px"/>
+                                </div>
+                                <div class="col">
+                                    <p id="rareza1">TIPO: '.$row['rareza'].'</p>
+                                    <br>
+                                    <p id="rareza_precio">'.$row['precio'].' <img src="img/moneda.png" alt="img" width=20px/></p>
+                                    <br>
+                                    <a href="vender.php?id='.$id.'" id="enlace_vender">VENDER</a>
+                                </div>
+                            </div>';                               
                     }
                 ?>
+            </div>
         </div>
-    </div>
-    <footer>
+        <div class="container">
+            <div class="row">
+                <?php
+                    $sql1 = 'SELECT nombre, imagen, rareza, precio, id FROM tcartas WHERE id='.$id2;
+                    $result2 = mysqli_query($mysqli, $sql1) or die('Query Error');
+                    #Recorremos $result1, almacenando los datos en un array
+                    while ($row = mysqli_fetch_array($result2)) {
+                        #Mostramos los datos que queremos
+                        echo '<div class="col">
+                                    <img src="' . $row['imagen'] . '" alt="imagen" width=90% style="margin-bottom: 100px; margin-top: 100px"/>
+                                </div>
+                                <div class="col">
+                                    <p id="rareza1">TIPO: '.$row['rareza'].'</p>
+                                    <br>
+                                    <p id="rareza_precio">'.$row['precio'].' <img src="img/moneda.png" alt="img" width=20px/></p>
+                                    <br>
+                                    <a href="vender.php?id='.$id2.'" id="enlace_vender">VENDER</a>
+                                </div>
+                            </div>';                               
+                    }
+                ?>
+            </div>
+        </div>
+        
+        <footer>
             <div class="row">
                 <div class="col">
                     <h3>DROMEDA</h3>
@@ -104,8 +115,11 @@
                     <a href="coleccion.php">Colección</a>
                     <br>
                     <a href="tienda.php">Tienda</a>
+                    <br>
+                    <a href="mercado.php">Mercado</a>
                 </div>
             </div>
         </footer>
+    </div>
 </body>
 </html>

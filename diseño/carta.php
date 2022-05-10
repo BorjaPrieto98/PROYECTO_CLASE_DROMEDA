@@ -77,7 +77,6 @@
                                         </div>
                                     </div>';                               
                             }
-                        echo '</table>';
                         #Cerramos la conexión
                         mysqli_close($mysqli);
                     }
