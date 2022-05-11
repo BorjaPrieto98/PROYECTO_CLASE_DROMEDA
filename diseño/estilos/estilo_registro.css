@@ -71,7 +71,7 @@ button {
     margin-bottom: 8rem;
 }
 #contenedor_registro{
-    margin: auto;
+    margin-top: 100px;
     background-color: whitesmoke;
     border-radius: 20px;
     text-align: center;
@@ -134,4 +134,18 @@ button {
 }
 .error{
     border: 2px solid red;
+}
+#email, #nombre_usuario, #rep_contrasenha, #contrasenha{
+    width: 70%;
+}
+@media only screen and (max-width: 600px){
+    #cabecera{
+        flex-direction: column;
+    }
+    #contenedor_registro{
+        width: 100%;
+        margin-top: 100px;
+    }
+    
+    
 }

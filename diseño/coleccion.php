@@ -21,7 +21,7 @@
 </head>
 <body>
     <div class="container-fluid" id="contenedor_principal">
-        <div class="row">
+        <div class="row" id="cabecera">
             <div class="col text-center" id="col_tienda">
                 <a href="tienda.php" id="texto_menu">TIENDA</a>
             </div>
@@ -37,7 +37,7 @@
                     $rsl = mysqli_query($mysqli, $coin) or die('Query Error');
                     while ($row = mysqli_fetch_array($rsl)) {
                         echo '<p id="nombre">'.$row['nombre_usuario'].'</p>';
-                        echo '<p id="coin">'.$row['coins'].' <img src="img/moneda.png" alt="img" width=20px/></p>';
+                        echo '<p id="coin">'.$row['coins'].' <img src="img/moneda.png" alt="img" width=20px id="moneda"/></p>';
                     }
                 ?>
             </div>
@@ -75,10 +75,14 @@
                                     <div class="col">
                                         <p id="rareza">TIPO: '.$row['rareza'].'</p>
                                         <br>
-                                        <p id="rareza_precio">PRECIO: '.$row['precio'].' <img src="img/moneda.png" alt="img" width=20px/></p>
+                                        <p id="rareza_precio">PRECIO: '.$row['precio'].' <img src="img/moneda.png" alt="img" width=20px id="moneda"/></p>
                                         <br>
                                         <a href="vender.php?id='.$row['id'].'" id="enlace_vender">VENDER</a>
-                                    </div>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        </div>
+                                   
                                 </div>';
                                                             
                             }

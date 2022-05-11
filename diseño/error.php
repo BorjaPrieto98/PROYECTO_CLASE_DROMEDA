@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container-fluid" id="contenedor_principal">
-        <div class="row">
+        <div class="row" id="cabecera">
             <div class="col text-center" id="col_tienda">
                 <a href="tienda.php" id="texto_menu">TIENDA</a>
             </div>
@@ -23,7 +23,7 @@
             </div>
             <div class="col text-center">
                 <!-- <button type="submit" class="btn" id="iniciar"><b><a href="#" id="inicio">Logout</a></b></button> -->
-                <button onclick="window.location.href='/login.php'" class="btn" id="iniciar" style="color: white">Login</button>
+                <button type="button" class="btn" id="iniciar"><a href="login.php" id="inicio">Login</a></button>
             </div>
         </div>
         <div class="row align-items-center" id="fila_imagenes">
@@ -31,7 +31,7 @@
                 
             </div>
         </div>
-        <div class="container">
+        <div class="container" id="frase_error">
             <h1>PARA PODER ACCEDER A ESTA SECCIÓN DEBES INICIAR SESIÓN</h1>
         </div>
         <footer>

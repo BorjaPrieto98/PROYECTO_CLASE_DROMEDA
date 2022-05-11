@@ -21,7 +21,7 @@
 </head>
 <body>
     <div class="container-fluid" id="contenedor_principal">
-        <div class="row">
+        <div class="row" id="cabecera">
             <div class="col text-center" id="col_tienda">
                 <a href="tienda.php" id="texto_menu">TIENDA</a>
             </div>
@@ -52,15 +52,15 @@
             </div>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row" id="cabecera">
                     <div class="col">
                         <img src="img/sobre.png" alt="img" width="55%" id="sobre"/>
                     </div>
-                    <div class="col">
+                    <div class="col" id="columna_sobre">
                         <p id="rareza">SOBRE NORMAL</p>
                         <p id="rareza_precio"> 1000 <img src="img/moneda.png" alt="img" width=20px/></p>
                         <br>
-                        <i style="color: white">Al comprar este sobre optendrás una carta de rareza NORMAL</i>
+                        <i>Al comprar este sobre optendrás una carta de rareza NORMAL</i>
                     </div>
             </div>
             <div class="row">
@@ -68,15 +68,15 @@
             </div>
         </div>
         <div class="container">
-            <div class="row">
-                    <div class="col">
+            <div class="row" id="cabecera">
+                    <div class="col" >
                         <img src="img/sobre.png" alt="img" width="55%" id="sobre"/>
                     </div>
-                    <div class="col">
+                    <div class="col" id="columna_sobre">
                         <p id="rareza">SOBRE ESPECIAL</p>
                         <p id="rareza_precio"> 1500 <img src="img/moneda.png" alt="img" width=20px/></p>
                         <br>
-                        <i style="color: white">Al comprar este sobre optendrás una carta de rareza ESPECIAL o NORMAL</i>
+                        <i>Al comprar este sobre optendrás una carta de rareza ESPECIAL o NORMAL</i>
                     </div>
             </div>
             <div class="row">
@@ -84,15 +84,15 @@
             </div>
         </div>
         <div class="container">
-            <div class="row">
-                    <div class="col">
+            <div class="row" id="cabecera">
+                    <div class="col" >
                         <img src="img/sobre.png" alt="img" width="55%" id="sobre"/>
                     </div>
-                    <div class="col">
+                    <div class="col" id="columna_sobre">
                         <p id="rareza">SOBRE ULTRA</p>
                         <p id="rareza_precio"> 5000 <img src="img/moneda.png" alt="img" width=20px/></p>
                         <br>
-                        <i style="color: white">Al comprar este sobre optendrás una carta de rareza ESPECIAL o DIOS</i>
+                        <i>Al comprar este sobre optendrás una carta de rareza ESPECIAL o DIOS</i>
                     </div>
             </div>
             <div class="row">
@@ -100,15 +100,15 @@
             </div>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row" id="cabecera">
                     <div class="col">
                         <img src="img/sobre.png" alt="img" width="55%" id="sobre"/>
                     </div>
-                    <div class="col">
+                    <div class="col" id="columna_sobre">
                         <p id="rareza">SOBRE DIVINO</p>
                         <p id="rareza_precio"> 15000 <img src="img/moneda.png" alt="img" width=20px/></p>
                         <br>
-                        <i style="color: white">Al comprar este sobre optendrás una carta de rareza DIOS</i>
+                        <i>Al comprar este sobre optendrás una carta de rareza DIOS</i>
                     </div>
             </div>
             <div class="row">

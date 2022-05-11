@@ -107,6 +107,7 @@ button {
     background-color: #484848;
     margin-top: 11rem;
 }
+
 #footer .col{
     color: white;
     margin-top: 4rem;
@@ -116,4 +117,9 @@ button {
 #footer .col a{
     text-decoration: none;
     color: white;
+}
+@media only screen and (max-width: 600px){
+    #cabecera{
+        flex-direction: column;
+    }
 }

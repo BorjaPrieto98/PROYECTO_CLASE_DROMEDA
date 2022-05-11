@@ -19,12 +19,15 @@
 </head>
 <body>
     <div class="container-fluid" id="contenedor_principal">
-        <div class="row">
+        <div class="row" id="cabecera">
             <div class="col text-center" id="col_tienda">
                 <a href="tienda.php" id="texto_menu">TIENDA</a>
             </div>
-            <div class="col text-start" id="col_tienda">
+            <div class="col text-center" id="col_tienda">
                 <a href="coleccion.php" id="texto_menu">COLECCIÓN</a>
+            </div>
+            <div class="col text-center" id="col_tienda">
+                <a href="mercado.php" id="texto_menu">MERCADO</a>
             </div>
             <div class="col text-center">   
                 <?php
@@ -32,7 +35,7 @@
                     $rsl = mysqli_query($mysqli, $coin) or die('Query Error');
                     while ($row = mysqli_fetch_array($rsl)) {
                         echo '<p id="nombre">'.$row['nombre_usuario'].'</p>';
-                        echo '<p id="coin">'.$row['coins'].' <img src="img/moneda.png" alt="img" width=20px/></p>';
+                        echo '<p id="coin">'.$row['coins'].' <img src="img/moneda.png" alt="img" width=20px id="moneda"/></p>';
                     }
                 ?>
             </div>
@@ -64,11 +67,11 @@
                             #Recorremos $result1, almacenando los datos en un array
                             while ($row = mysqli_fetch_array($result1)) {
                                 #Mostramos los datos que queremos
-                                echo '<div class="row">
+                                echo '<div class="row" id="carta_unic">
                                         <div class="col">
-                                            <img src="' . $row['imagen'] . '" alt="imagen" width=90% style="margin-bottom: 100px"/>
+                                            <img src="' . $row['imagen'] . '" alt="imagen" width=90% id="carta"/>
                                         </div>
-                                        <div class="col">
+                                        <div class="col" id="col_unic">
                                             <p id="rareza">TIPO: '.$row['rareza'].'</p>
                                             <br>
                                             <p id="rareza_precio">PRECIO: '.$row['precio'].' <img src="img/moneda.png" alt="img" width=20px/></p>

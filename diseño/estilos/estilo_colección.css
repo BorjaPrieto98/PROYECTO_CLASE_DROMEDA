@@ -2,7 +2,6 @@
     box-sizing: border-box;
     font-family: 'ExpletusSans';
 }
-
 @font-face {
     font-family: 'ExpletusSans';
     src: url(../fonts/expletus_sans/static/ExpletusSans-Regular.ttf) format('truetype');
@@ -134,9 +133,13 @@ button {
     margin-top: 2rem;
 }
 footer{
-    background-color: #484848;
+    
     margin-top: 10rem;
 }
+footer .row{
+    background-color: #484848;
+}
+
 footer .col{
     color: white;
     margin-top: 4rem;
@@ -146,4 +149,51 @@ footer .col{
 footer .col a{
     text-decoration: none;
     color: white;
+}
+#inicio{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+#iniciar{
+    background-color: #343434;
+    height: 50px;
+    width: 100px;
+}
+#moneda{
+    margin-top: -4px;
+}
+#columna_sobre{
+    padding-bottom: 50px;
+}
+i{
+    color:white;
+}
+
+
+@media only screen and (max-width: 600px){
+    #cabecera{
+        flex-direction: column;
+    }
+    .container > #carta_unic{
+        flex-direction: column;
+    }
+    #frase_error{
+        width: initial;
+    }
+    #frase_error h1{
+        font-size: 30px;
+    }
+    .container{
+        width: initial;
+    }
+    #rareza{
+        margin-top: 0px;
+    }
+    #carta{
+        margin-bottom: 40px;
+    }
+    #col_unic{
+        padding-bottom: 50px;
+    }
 }
