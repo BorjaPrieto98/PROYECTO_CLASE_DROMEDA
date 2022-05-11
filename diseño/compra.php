@@ -11,7 +11,7 @@ try {
     $result1 = mysqli_query($mysqli, $coins) or die('Query Error');
     while ($row = mysqli_fetch_array($result1)) {
         #Mostramos los datos que queremos
-        $coin=(int)$row['precio'];                         
+        $coin=(int)$row['precio']*2;                  
     }
     $coins_user = "SELECT coins FROM tuser WHERE id=".$user_id;
     $result2 = mysqli_query($mysqli, $coins_user) or die('Query Error');

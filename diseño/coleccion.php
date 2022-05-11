@@ -62,7 +62,7 @@
                         echo '<br>';
                         echo '<br>';
                             #Creamos una variable que nos almacene toda la información de las cartas de ese usuario
-                            $sql = 'SELECT tcartas.id, tcartas.imagen, tcartas.precio, tcartas.rareza, tuser_carta.id_user FROM tcartas INNER JOIN tuser_carta ON tcartas.id = tuser_carta.id_carta WHERE tuser_carta.id_user ='.$user_id;
+                            $sql = 'SELECT tcartas.id, tcartas.imagen, tcartas.precio, tcartas.rareza, tuser_carta.id_user FROM tcartas INNER JOIN tuser_carta ON tcartas.id = tuser_carta.id_carta WHERE tuser_carta.id_user ='.$user_id.' ORDER BY tuser_carta.id_carta';
                             //$sql = 'SELECT tcartas.nombre, tcartas.rareza, tcartas.imagen, tcartas.precio, tcartas.id FROM tcartas INNER JOIN tuser_carta ON tcartas.id = tuser_carta.id_carta INNER JOIN tuser ON tuser_carta.id_user = '.$user_id;
                             $result1 = mysqli_query($mysqli, $sql) or die('Query Error');
                             #Recorremos $result1, almacenando los datos en un array

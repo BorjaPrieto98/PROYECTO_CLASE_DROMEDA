@@ -72,13 +72,15 @@
                                 // echo '<div class="columnas" style="text-align:center">
                                 //         <img src="' . $row['imagen'] . '" alt="imagen"/>
                                 //         <p style="font-size: 20px; color: white">'.$row['precio'].' coins</p>
-                                //     </div>';               
+                                //     </div>';
+                                $coin=(int)$row['precio']*2;               
                                 echo '<div class="row">
                                     <div class="col" style="text-align:center">
                                         <img src="' . $row['imagen'] . '" alt="imagen"  id="carta"/>
                                     </div>
                                     <div class="col">
-                                        <p id="rareza">PRECIO: '.$row['precio'].' <img src="img/moneda.png" alt="img" width=20px id="moneda"/></p>
+
+                                        <p id="rareza">PRECIO: '.$coin.' <img src="img/moneda.png" alt="img" width=20px id="moneda"/></p>
                                         <br>
                                         <a href="compra.php?id='.$row['id'].'" id="enlace_compra">COMPRAR</a>
                                         <br>
