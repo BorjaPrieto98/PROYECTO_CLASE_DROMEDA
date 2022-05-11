@@ -30,4 +30,3 @@ CREATE TABLE tUser_carta{
     FOREIGN KEY (id_carta) REFERENCES tCartas(id)
 };
 
-INSERT INTO tcartas (nombre, imagen, rareza, precio) VALUES ('Nathanziel', '', 'NOR', '2000');
