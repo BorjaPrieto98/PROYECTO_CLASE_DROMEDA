@@ -77,6 +77,7 @@
                                             <p id="rareza_precio">PRECIO: '.$row['precio'].' <img src="img/moneda.png" alt="img" width=20px/></p>
                                             <br>
                                             <a href="vender.php?id='.$id.'" id="enlace_vender">VENDER</a>
+                                           
                                         </div>
                                     </div>';                               
                             }
