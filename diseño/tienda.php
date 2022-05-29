@@ -58,7 +58,7 @@
                     if (empty($user_id)) {
                         header('Location: error.php?mensaje=Error');
                     } else {
-                        $alt=rand(1, 5);
+                        $alt=rand(1, 16);
                         echo '<br>';
                         echo '<br>';
                         echo '<br>';
@@ -76,7 +76,7 @@
                                 $coin=(int)$row['precio']*2;               
                                 echo '<div class="row">
                                     <div class="col" style="text-align:center">
-                                        <img src="' . $row['imagen'] . '" alt="imagen"  id="carta"/>
+                                        <img src="' . $row['imagen'] . '" alt="imagen"  id="carta" width="100%"/>
                                     </div>
                                     <div class="col">
 

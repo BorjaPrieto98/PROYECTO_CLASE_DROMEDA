@@ -76,7 +76,7 @@
                         <p id="rareza">SOBRE ESPECIAL</p>
                         <p id="rareza_precio"> 1500 <img src="img/moneda.png" alt="img" width=20px/></p>
                         <br>
-                        <i>Al comprar este sobre optendrás una carta de rareza ESPECIAL o NORMAL</i>
+                        <i>Al comprar este sobre optendrás dos cartas de rareza ESPECIAL o NORMAL</i>
                     </div>
             </div>
             <div class="row">

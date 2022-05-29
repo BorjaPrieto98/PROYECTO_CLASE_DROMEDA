@@ -70,7 +70,7 @@
                                 #Mostramos los datos que queremos
                                 echo '<div class="row">
                                     <div class="col" style="text-align:center">
-                                        <a href="carta.php?id='.$row['id'].'"><img src="' . $row['imagen'] . '" alt="imagen" id="carta"/></a>
+                                        <a href="carta.php?id='.$row['id'].'"><img src="' . $row['imagen'] . '" alt="imagen" id="carta" width="100%"/></a>
                                     </div> 
                                     <div class="col">
                                         <p id="rareza">TIPO: '.$row['rareza'].'</p>
@@ -83,8 +83,7 @@
                                         <br>
                                         </div>
                                    
-                                </div>';
-                                                            
+                                </div>';                       
                             }
                         #Cerramos la conexión
                         mysqli_close($mysqli);
