@@ -63,7 +63,7 @@
                         echo '<br>';
                         echo '<br>';
                             #Creamos una variable que nos almacene toda la información de los eventos de ese usuario
-                            $sql = "SELECT id, imagen, precio FROM tcartas WHERE rareza='Especial' OR rareza ='Normal' ORDER BY RAND () LIMIT 1";
+                            $sql = "SELECT id, imagen, precio, rareza FROM tcartas WHERE rareza='Especial' OR rareza ='Normal'"; #ORDER BY RAND () LIMIT 1";
                             $result1 = mysqli_query($mysqli, $sql) or die('Query Error');
                             #Recorremos $result1, almacenando los datos en un array
                             while ($row = mysqli_fetch_array($result1)) {
@@ -72,19 +72,23 @@
                                 //         <img src="' . $row['imagen'] . '" alt="imagen"/>
                                 //         <p style="font-size: 20px; color: white">'.$row['precio'].' coins</p>
                                 //     </div>';
-                                $coin=(int)$row['precio']*2;               
-                                echo '<div class="row">
+                                $coin=(int)$row['precio']*2;              
+                                    echo '<div class="row">
                                     <div class="col" style="text-align:center">
-                                        <img src="' . $row['imagen'] . '" alt="imagen"  id="carta" width="100%"/>
-                                    </div>
+                                        <img src="' . $row['imagen'] . '" alt="imagen" id="carta" width="90%"/>
+                                    </div> 
                                     <div class="col">
-
-                                        <p id="rareza">PRECIO: '.$coin.' <img src="img/moneda.png" alt="img" width=20px id="moneda"/></p>
+                                        <p id="rareza">TIPO: '.$row['rareza'].'</p>
+                                        <br>
+                                        <p id="rareza_precio">PRECIO: '.$coin.' <img src="img/moneda.png" alt="img" width=20px id="moneda"/></p>
                                         <br>
                                         <a href="compra.php?id='.$row['id'].'" id="enlace_compra">COMPRAR</a>
                                         <br>
                                         <br>
-                                    </div>';           
+                                        <br>
+                                        </div>
+                                   
+                                </div>';                   
                             }
                         #Cerramos la conexión
                         mysqli_close($mysqli);

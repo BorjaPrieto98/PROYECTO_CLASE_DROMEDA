@@ -36,6 +36,7 @@
                     while ($row = mysqli_fetch_array($rsl)) {
                         echo '<p id="nombre">'.$row['nombre_usuario'].'</p>';
                         echo '<p id="coin">'.$row['coins'].' <img src="img/moneda.png" alt="img" width=20px id="moneda"/></p>';
+                       
                     }
                 ?>
             </div>
@@ -62,7 +63,7 @@
                         echo '<br>';
                         echo '<br>';
                             #Creamos una variable que nos almacene toda la información de las cartas de ese usuario
-                            $sql = 'SELECT nombre, imagen, rareza, precio, id FROM tcartas WHERE id='.$id;
+                            $sql = 'SELECT nombre, imagen, rareza, precio, id, descripcion FROM tcartas WHERE id='.$id;
                             $result1 = mysqli_query($mysqli, $sql) or die('Query Error');
                             #Recorremos $result1, almacenando los datos en un array
                             while ($row = mysqli_fetch_array($result1)) {
@@ -75,6 +76,8 @@
                                             <p id="rareza">TIPO: '.$row['rareza'].'</p>
                                             <br>
                                             <p id="rareza_precio">PRECIO: '.$row['precio'].' <img src="img/moneda.png" alt="img" width=20px/></p>
+                                            <br>
+                                            <p id="descripcion">'.$row['descripcion'].'</p>
                                             <br>
                                             <a href="vender.php?id='.$id.'" id="enlace_vender">VENDER</a>
                                            

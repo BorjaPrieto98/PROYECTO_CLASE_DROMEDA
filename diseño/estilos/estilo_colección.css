@@ -11,6 +11,14 @@
 body{
     background-color: black!important;
 }
+#descripcion{
+    color: white;
+    margin-right: 50px;
+    margin-left: 50px;
+    font-size: 20px;
+    text-align: justify;
+
+}
 #carta{
     margin-bottom: 100px;
 }
