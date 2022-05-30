@@ -58,13 +58,12 @@
                     if (empty($user_id)) {
                         header('Location: error.php?mensaje=Error');
                     } else {
-                        $alt=rand(1, 16);
                         echo '<br>';
                         echo '<br>';
                         echo '<br>';
                         echo '<br>';
                             #Creamos una variable que nos almacene toda la información de los eventos de ese usuario
-                            $sql = 'SELECT id, imagen, precio FROM tcartas WHERE id='.$alt;
+                            $sql = "SELECT id, imagen, precio FROM tcartas WHERE rareza='Especial' OR rareza ='Normal' ORDER BY RAND () LIMIT 1";
                             $result1 = mysqli_query($mysqli, $sql) or die('Query Error');
                             #Recorremos $result1, almacenando los datos en un array
                             while ($row = mysqli_fetch_array($result1)) {

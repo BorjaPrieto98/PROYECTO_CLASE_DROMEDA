@@ -5,7 +5,6 @@
     $mysqli = get_db_connection_or_die();
     $user_id = $_SESSION['user_id'];
     $id = $_GET['id'];
-    $id2 = $_GET['id2'];
     if(empty($user_id)){
         header('Location: error.php');
     }
@@ -76,29 +75,7 @@
                 ?>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <?php
-                    $sql1 = 'SELECT nombre, imagen, rareza, precio, id FROM tcartas WHERE id='.$id2;
-                    $result2 = mysqli_query($mysqli, $sql1) or die('Query Error');
-                    #Recorremos $result1, almacenando los datos en un array
-                    while ($row = mysqli_fetch_array($result2)) {
-                        #Mostramos los datos que queremos
-                        echo '<div class="col">
-                                    <img src="' . $row['imagen'] . '" alt="imagen" width=90% style="margin-bottom: 100px; margin-top: 100px"/>
-                                </div>
-                                <div class="col">
-                                    <p id="rareza1">TIPO: '.$row['rareza'].'</p>
-                                    <br>
-                                    <p id="rareza_precio">'.$row['precio'].' <img src="img/moneda.png" alt="img" width=20px/></p>
-                                    <br>
-                                    <a href="vender.php?id='.$id2.'" id="enlace_vender">VENDER</a>
-                                </div>
-                            </div>';                               
-                    }
-                ?>
-            </div>
-        </div>
+
         
         <footer>
             <div class="row">

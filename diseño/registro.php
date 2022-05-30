@@ -34,7 +34,7 @@
             <?php
                 if (isset($_GET['success'])) {
                     if ($_GET['success'] == TRUE) {
-                        echo "<p>BRAVO! Nuevo usuario SEGURISIMO registrado con éxito 100% garantizado NO FAKE </p>";
+                        header("Location: login.php");
                     }
                     }
                     if (isset($_GET['register_failed_email'])) {

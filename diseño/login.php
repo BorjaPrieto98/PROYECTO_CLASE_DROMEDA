@@ -33,7 +33,23 @@
                     <p id="texto_registro">LOGIN</p>
                 </div>
             </div>
-
+            <?php
+                if (isset($_GET['success'])) {
+                    if ($_GET['success'] == TRUE) {
+                        header("Location: coleccion.php");
+                    }
+                    }
+                    if (isset($_GET['login_failed_password'])) {
+                    if ($_GET['login_failed_password'] == TRUE) {
+                        echo ("<p>Contraseña incorrecta</p>");
+                    }
+                    }
+                    if (isset($_GET['login_failed_email'])) {
+                    if ($_GET['login_failed_email'] == TRUE) {
+                        echo ("<p>Email incorrecto</p>");
+                    }
+                }
+            ?>
             <div class="row" id="fila_formulario">
                 <div class="col">
                     <form action="do_login.php" method="POST" id="register">

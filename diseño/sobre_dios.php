@@ -4,7 +4,7 @@ session_start();
 $mysqli = get_db_connection_or_die();
 $user_id = $_SESSION['user_id'];
 $alt=rand(1, 5);
-$coin=1000;
+$coin=30000;
 $cantidad=1;
 
 try {
@@ -22,13 +22,12 @@ try {
         $coins_update = "UPDATE tuser SET coins=".$coins_up." WHERE id=".$user_id;
         $result3 = mysqli_query($mysqli, $coins_update) or die('Query Error');
 
-        $sobre="SELECT id FROM tcartas WHERE rareza='Normal' ORDER BY RAND () LIMIT 1";
+        $sobre="SELECT id FROM tcartas WHERE rareza='Dios' ORDER BY RAND () LIMIT 1";
         $result= mysqli_query($mysqli, $sobre) or die('Query Error');
         while ($row = mysqli_fetch_array($result)) {
         #Mostramos los datos que queremos
             $id=$row['id'];                         
         }
-
 
         $sql = "INSERT INTO tuser_carta (id_user, id_carta, cantidad) VALUES (?, ?, ?)";
         $stmt = $mysqli->prepare($sql);
@@ -41,10 +40,10 @@ try {
         }
 
         $stmt->close();
-
         
         header('Location: abrir_normal.php?id='.$id);
     }
+    
 } catch (Exception $e) {
     error_log($e);
     header("Location: compra.php?compra_failed_unknown=True");

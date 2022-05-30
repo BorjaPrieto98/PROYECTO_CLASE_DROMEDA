@@ -74,7 +74,7 @@
                     </div>
                     <div class="col" id="columna_sobre">
                         <p id="rareza">SOBRE ESPECIAL</p>
-                        <p id="rareza_precio"> 1500 <img src="img/moneda.png" alt="img" width=20px/></p>
+                        <p id="rareza_precio"> 8000 <img src="img/moneda.png" alt="img" width=20px/></p>
                         <br>
                         <i>Al comprar este sobre optendrás dos cartas de rareza ESPECIAL o NORMAL</i>
                     </div>
@@ -90,7 +90,7 @@
                     </div>
                     <div class="col" id="columna_sobre">
                         <p id="rareza">SOBRE ULTRA</p>
-                        <p id="rareza_precio"> 5000 <img src="img/moneda.png" alt="img" width=20px/></p>
+                        <p id="rareza_precio"> 20000 <img src="img/moneda.png" alt="img" width=20px/></p>
                         <br>
                         <i>Al comprar este sobre optendrás una carta de rareza ESPECIAL o DIOS</i>
                     </div>
@@ -106,7 +106,7 @@
                     </div>
                     <div class="col" id="columna_sobre">
                         <p id="rareza">SOBRE DIVINO</p>
-                        <p id="rareza_precio"> 15000 <img src="img/moneda.png" alt="img" width=20px/></p>
+                        <p id="rareza_precio"> 30000 <img src="img/moneda.png" alt="img" width=20px/></p>
                         <br>
                         <i>Al comprar este sobre optendrás una carta de rareza DIOS</i>
                     </div>
