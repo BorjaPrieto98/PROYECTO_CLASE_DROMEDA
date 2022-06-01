@@ -51,40 +51,7 @@
         </div>
         <div class="container">
             <p id="saldo">No tienes saldo para comprar esa carta</p>
-            <?php
-                    #Comprobamos que la sesión no está vacía
-                    if (empty($user_id)) {
-                        header('Location: error.php?mensaje=Error');
-                    } else {
-                        $alt=rand(1, 5);
-                        echo '<br>';
-                        echo '<br>';
-                        echo '<br>';
-                        echo '<br>';
-                            #Creamos una variable que nos almacene toda la información de los eventos de ese usuario
-                            $sql = 'SELECT id, imagen, precio FROM tcartas WHERE id='.$alt;
-                            $result1 = mysqli_query($mysqli, $sql) or die('Query Error');
-                            #Recorremos $result1, almacenando los datos en un array
-                            while ($row = mysqli_fetch_array($result1)) {
-                                #Mostramos los datos que queremos
-                                // echo '<div class="columnas" style="text-align:center">
-                                //         <img src="' . $row['imagen'] . '" alt="imagen"/>
-                                //         <p style="font-size: 20px; color: white">'.$row['precio'].' coins</p>
-                                //     </div>';               
-                                echo '<div class="row">
-                                    <div class="col" style="text-align:center">
-                                        <img src="' . $row['imagen'] . '" alt="imagen" style="margin-bottom: 100px"/>
-                                    </div>
-                                    <div class="col">
-                                        <p id="rareza">PRECIO: '.$row['precio'].' <img src="img/moneda.png" alt="img" width=20px/></p>
-                                        <br>
-                                        <a href="compra.php?id='.$row['id'].'" id="enlace_compra">COMPRAR</a>
-                                    </div>';           
-                            }
-                        #Cerramos la conexión
-                        mysqli_close($mysqli);
-                    }
-                ?>
+           
         </div>
     </div>
     <footer>
