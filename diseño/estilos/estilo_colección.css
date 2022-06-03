@@ -13,8 +13,8 @@ body{
 }
 #descripcion{
     color: white;
-    margin-right: 50px;
-    margin-left: 50px;
+    margin-right: 40px;
+    margin-left: 40px;
     font-size: 20px;
     text-align: justify;
 
@@ -46,6 +46,11 @@ body{
     font-size: 20px; 
     color: white;
     margin-top: 30%;
+}
+#rareza_carta{
+    font-size: 20px; 
+    color: white;
+    /* margin-top: 30%; */
 }
 #rareza1{
     font-size: 20px; 

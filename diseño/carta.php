@@ -73,7 +73,7 @@
                                             <img src="' . $row['imagen'] . '" alt="imagen" width=90% id="carta"/>
                                         </div>
                                         <div class="col" id="col_unic">
-                                            <p id="rareza">TIPO: '.$row['rareza'].'</p>
+                                            <p id="rareza_carta">TIPO: '.$row['rareza'].'</p>
                                             <br>
                                             <p id="rareza_precio">PRECIO: '.$row['precio'].' <img src="img/moneda.png" alt="img" width=20px/></p>
                                             <br>

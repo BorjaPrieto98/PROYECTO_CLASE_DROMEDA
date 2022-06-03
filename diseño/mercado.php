@@ -112,7 +112,7 @@
                     </div>
             </div>
             <div class="row">
-                <a href="sobre_divino.php" id="enlace_compra">COMPRAR</a>
+                <a href="sobre_dios.php" id="enlace_compra">COMPRAR</a>
             </div>
         </div>
         <footer>

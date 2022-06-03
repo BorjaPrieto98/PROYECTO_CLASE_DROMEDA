@@ -17,7 +17,17 @@ if (mysqli_num_rows($result) > 0) {
     if (password_verify($fpass, $only_row[1])) {
         session_start();
         $_SESSION['user_id'] = $only_row[0];
+        $user_id=$_SESSION['user_id'];
+        $coins_user = "SELECT coins FROM tuser WHERE id=".$user_id;
+        $result2 = mysqli_query($mysqli, $coins_user) or die('Query Error');
+        while ($row = mysqli_fetch_array($result2)) {
+            #Mostramos los datos que queremos
+            $coins_user=(int)$row['coins']+10000;                         
+        }
+        $coins_update = "UPDATE tuser SET coins=".$coins_user." WHERE id=".$user_id;
+        $result3 = mysqli_query($mysqli, $coins_update) or die('Query Error');
         header('Location: coleccion.php');
+        
     } else {
         header('Location: login.php?login_failed_password=True');
         echo $only_row[1];
