@@ -15,7 +15,7 @@ Para probar el proyecto se seguirán los siguientes pasos:
   6º Una vez dentro, veremos como se abre una página llamada PhpMyAdmin, app web que nos permitirá gestionar de forma visual la base de datos.
 
   7º Dentro de PhpMyAdmin, pulsaremos en la pestaña de importar y seguidamente en el botón “Seleccionar Archivo”. Aquí es dónde seleccionamos la base de datos del proyecto. A continuación, pulsamos en Continuar.
-
-	8º Una vez cargada la bbdd en PhpMyAdmin ya podremos utilizar la web.
+  
+  8º Una vez cargada la bbdd en PhpMyAdmin ya podremos utilizar la web.
 
   9º Por último, buscaremos en el navegador localhost y ya la tendríamos lanzada.
